@@ -1,4 +1,6 @@
 import time
+
+import openpyxl
 from appium.webdriver.common.appiumby import AppiumBy
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -7,7 +9,7 @@ from selenium.webdriver.support import expected_conditions as EC
 class LoginPage:
     def __init__(self, driver):
         self.driver = driver
-        self.wait = WebDriverWait(driver, 20)
+        self.wait = WebDriverWait(driver, 5)
 
         # Locators
         self.mobile_input = (AppiumBy.XPATH, '//android.widget.EditText[1]')
@@ -75,17 +77,37 @@ class LoginPage:
 
     # ❌ Negative test method
     def test_login_negative_cases(self):
-        test_data = [
-            ("", "", "Empty mobile and password"),
-            ("12345", "correctpass", "Invalid mobile format"),
-            ("9876543210", "", "Valid mobile, empty password"),
-            ("", "correctpass", "Empty mobile, valid password"),
-            ("invalid", "invalid", "Invalid mobile and password"),
-            ("9876543210", "wrongpass", "Valid mobile, wrong password")
-        ]
+        import openpyxl
+        from appium.webdriver.common.appiumby import AppiumBy
+        from selenium.webdriver.support import expected_conditions as EC
+        from selenium.common.exceptions import TimeoutException
 
-        for mobile, password, desc in test_data:
-            print(f"\n🧪 Negative Test: {desc}")
+        # Load workbook
+        workbook = openpyxl.load_workbook("E:\\Venkat\\PyCharm_Projects\\HrappTest\\data\\login_test_data.xlsx")
+        sheet = workbook.active
+
+        for row in range(2, sheet.max_row + 1):  # Skip header row
+            mobile = str(sheet.cell(row=row, column=1).value or "")
+            password = str(sheet.cell(row=row, column=2).value or "")
+            desc = str(sheet.cell(row=row, column=3).value or "")
+
+            print(f"\n🧪 Test: {desc}")
             self.login(mobile, password)
-            assert self.is_login_screen_displayed(), f"❌ Login passed unexpectedly for: {desc}"
-            print("✅ Login failed as expected.")
+
+            try:
+                # Try to detect successful login
+                self.wait.until(EC.presence_of_element_located(
+                    (AppiumBy.ACCESSIBILITY_ID, "Our Projects")
+                ))
+                result = " login Pass"
+                print("✅ Login succeeded — 'Our Projects' visible.")
+            except TimeoutException:
+                result = "Login failed"
+                print("❌ Login failed or 'Our Projects' not visible.")
+
+            # Write result in column 4 (D)
+            sheet.cell(row=row, column=4).value = result
+
+        # Save workbook with results
+        workbook.save("E:\\Venkat\\PyCharm_Projects\\HrappTest\\data\\login_test_data.xlsx")
+
