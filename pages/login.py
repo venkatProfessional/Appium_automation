@@ -72,6 +72,7 @@ class LoginPage:
         except:
             raise AssertionError("❌ Login failed: expected success element not found.")
 
+
     # ❌ Negative test method
     def test_login_negative_cases(self):
         test_data = [
