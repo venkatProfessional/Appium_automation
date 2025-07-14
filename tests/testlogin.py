@@ -77,7 +77,6 @@ def test_feedback_cards_navigation(logged_in_driver):
     feedback_page.click_feedback_menu()
     feedback_page.open_and_close_feedback_cards(2)
 
-
 @pytest.mark.order(8)
 def test_repair_maintenance_navigation(logged_in_driver):
     repair_page = RepairMaintenanceClass(logged_in_driver)
@@ -89,10 +88,12 @@ def test_notification_maintenance_navigation(logged_in_driver):
     notification_page = NotificationMaintenanceClass(logged_in_driver)
     notification_page.run_notification_maintenance_flow()
 
+
 @pytest.mark.order(10)
 def test_attendance_flow(logged_in_driver):
     attendance = ApproveAttendanceClass(logged_in_driver)
     attendance.run_approve_attendance_flow()
+
 
 @pytest.mark.order(11)
 def test_logout_flow(logged_in_driver):
