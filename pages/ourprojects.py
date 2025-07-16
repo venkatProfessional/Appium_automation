@@ -1,4 +1,5 @@
 from appium.webdriver.common.appiumby import AppiumBy
+from selenium.common import TimeoutException
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
@@ -22,6 +23,11 @@ class listprojects:
             AppiumBy.XPATH,
             ".//android.widget.Toast[contains(@text, 'Updated Location Address')]"
         )
+
+        self.clickonwidgetabtn = (AppiumBy.XPATH,'//android.widget.FrameLayout[@resource-id="android:id/content"]/android.widget.FrameLayout/android.view.View/android.view.View/android.view.View/android.view.View/android.widget.Button')
+        self.clickoninactive=(AppiumBy.XPATH,'//android.widget.Button[@content-desc="Inactive"]')
+        self.clickonactive =(AppiumBy.XPATH,'//android.widget.Button[@content-desc="Active"]')
+        self.clickonAll = (AppiumBy.XPATH,'//android.widget.Button[@content-desc="All"]')
 
     def wait_for_projects_page(self):
         self.wait.until(EC.presence_of_element_located(self.searchbar))
@@ -94,3 +100,59 @@ class listprojects:
 
         except Exception as e:
             print(f"❌ Error waiting for location or clicking Save: {e}")
+
+    from appium.webdriver.common.appiumby import AppiumBy
+    from selenium.common.exceptions import TimeoutException, NoSuchElementException
+
+    from appium.webdriver.common.appiumby import AppiumBy
+    from selenium.common.exceptions import TimeoutException
+
+    def clickoninactiveactive(self):
+        print("Started: Inactive and Active flow")
+
+        # Click on Widget tab
+        widget = self.wait.until(EC.element_to_be_clickable(self.clickonwidgetabtn))
+        widget.click()
+        print("Clicked on Widget tab")
+
+        # Click on Active
+        active = self.wait.until(EC.element_to_be_clickable(self.clickonactive))
+        active.click()
+        print("Clicked on Active")
+
+        # Click on Widget tab again
+        widget = self.wait.until(EC.element_to_be_clickable(self.clickonwidgetabtn))
+        widget.click()
+        print("Clicked on Widget tab again after Active")
+
+        # Try finding Inactive by XPath, fallback to Accessibility ID
+        try:
+            inactive = self.wait.until(EC.element_to_be_clickable(
+                (AppiumBy.XPATH, '//android.widget.Button[@content-desc="Inactive"]')
+            ))
+            print("Found Inactive using XPath")
+        except TimeoutException:
+            print("Inactive not found by XPath, trying Accessibility ID")
+            try:
+                inactive = self.wait.until(EC.element_to_be_clickable(
+                    (AppiumBy.ACCESSIBILITY_ID, 'Inactive')
+                ))
+                print("Found Inactive using Accessibility ID")
+            except TimeoutException:
+                print("Inactive not found using XPath or Accessibility ID")
+                return
+
+        # Click on Inactive
+        inactive.click()
+        print("Clicked on Inactive")
+
+        # Click on Widget tab again
+        widget = self.wait.until(EC.element_to_be_clickable(self.clickonwidgetabtn))
+        widget.click()
+        print("Clicked on Widget tab again after Inactive")
+        ALL = self.wait.until(EC.element_to_be_clickable(self.clickonAll))
+        ALL.click()
+        print("All the widjet clicked")
+
+
+

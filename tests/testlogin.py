@@ -21,17 +21,20 @@ def test_login_negative_cases(driver):  # ❌ Uses only `driver` (no login)
 
 
 @pytest.mark.order(2)
+@pytest.mark.smoke
 def test_login_valid(logged_in_driver):  # ✅ Logs in
     login_page = LoginPage(logged_in_driver)
     login_page.test_login_positive_case()
 
 
 @pytest.mark.order(3)
+@pytest.mark.smoke
 def test_projects_page_valid(logged_in_driver):
     project_page = listprojects(logged_in_driver)
     project_page.wait_for_projects_page()
     project_page.search("smi")
     project_page.click_first_result()
+
 
     project_page.click_save_button()  # Initial Save
     project_page.click_fetch_location()  # Start fetching location
@@ -43,6 +46,10 @@ def test_projects_page_valid(logged_in_driver):
         print("⚠️ Project was not saved. Manual verification needed.")
     else:
         print("✅ Project saved successfully.")
+
+    project_page.clickoninactiveactive()
+
+
 
 
 @pytest.mark.order(4)
@@ -96,6 +103,7 @@ def test_attendance_flow(logged_in_driver):
 
 
 @pytest.mark.order(11)
+@pytest.mark.smoke
 def test_logout_flow(logged_in_driver):
     from pages.logout import logout_test
     logout_page = logout_test(logged_in_driver)
