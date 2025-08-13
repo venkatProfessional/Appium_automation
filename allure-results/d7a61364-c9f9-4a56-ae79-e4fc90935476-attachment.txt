@@ -1,0 +1,14 @@
+✅ Login verified: 'Our Projects' screen is visible.
+✅ Clicked Save button
+📍 Location fetched and visible.
+✅ Save button clicked after location fetched.
+❌ Toast not found: Project may not be saved.
+⚠️ Project was not saved. Manual verification needed.
+Started: Inactive and Active flow
+Clicked on Widget tab
+Clicked on Active
+Clicked on Widget tab again after Active
+Found Inactive using XPath
+Clicked on Inactive
+Clicked on Widget tab again after Inactive
+All the widjet clicked

@@ -1,0 +1,21 @@
+
+🧪 Test: Empty mobile and password
+❌ Login failed or 'Our Projects' not visible.
+
+🧪 Test: Invalid mobile format
+❌ Login failed or 'Our Projects' not visible.
+
+🧪 Test: Valid mobile, empty password
+❌ Login failed or 'Our Projects' not visible.
+
+🧪 Test: Empty mobile, valid password
+❌ Login failed or 'Our Projects' not visible.
+
+🧪 Test: Invalid mobile and password
+❌ Login failed or 'Our Projects' not visible.
+
+🧪 Test: Valid mobile, wrong password
+❌ Login failed or 'Our Projects' not visible.
+
+🧪 Test: Valid mobile,valid password
+✅ Login succeeded — 'Our Projects' visible.

@@ -1,0 +1,3 @@
+✅ Login verified: 'Our Projects' screen is visible.
+🚀 Running positive login test...
+✅ Login successful – element with accessibility id 'Dashboard' is visible.

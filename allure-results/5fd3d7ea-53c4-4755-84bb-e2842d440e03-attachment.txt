@@ -1,0 +1,11 @@
+✅ Login verified: 'Our Projects' screen is visible.
+☰ Clicking toggle menu...
+🔔 Clicking notification menu...
+👆 Clicking 5 notification blocks one by one...
+➡️ Trying to click notification block 1
+✅ Clicked notification block 1
+➡️ Trying to click notification block 2
+✅ Clicked notification block 2
+➡️ Trying to click notification block 3
+✅ Clicked notification block 3
+⚠️ Only 3 notification blocks found.

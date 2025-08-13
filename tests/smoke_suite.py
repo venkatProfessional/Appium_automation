@@ -2,7 +2,7 @@
 
 import pytest
 
-from tests.testlogin import (
+from tests.test_workflow import (
     test_login_valid,
     test_logout_flow,
 )

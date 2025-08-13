@@ -1,7 +1,7 @@
 # regression_suite.py
 import pytest
 
-from tests.testlogin import (
+from tests.test_workflow import (
     test_login_negative_cases,
     test_login_valid,
     test_projects_page_valid,

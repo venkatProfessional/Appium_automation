@@ -1,0 +1,269 @@
+✅ Login verified: 'Our Projects' screen is visible.
+🚀 Starting Approve Attendance Flow...
+☞ Clicking Toggle menu...
+📝 Clicking Approve Attendance...
+🔁 Handling Pending tab...
+🔍 Clicking Filter icon...
+🎯 Selecting filter: //android.widget.Button[contains(@content-desc, "Pending")]
+⚠️ No containers found in Pending tab.
+✅ Finished processing Pending tab. Moving to other filter tabs...
+🔁 Processing filter tab: Present
+🔍 Clicking Filter icon...
+🎯 Selecting filter: Present
+🔍 Looking for containers in current filter tab...
+⚠️ No data present — no containers found in this filter tab.
+🔁 Processing filter tab: Absent
+🔍 Clicking Filter icon...
+🎯 Selecting filter: Absent
+🔍 Looking for containers in current filter tab...
+📋 Found 3 container(s) in this filter tab
+📦 Container 1 status: Rejected
+Name
+:
+kalai
+Emp Id
+:
+808
+Check In
+:
+-
+Check Out
+:
+-
+❌ Skipping rejected container (Rejected
+Name
+:
+kalai
+Emp Id
+:
+808
+Check In
+:
+-
+Check Out
+:
+-)
+📦 Container 2 status: Rejected
+Name
+:
+fghfhg
+Emp Id
+:
+912
+Check In
+:
+-
+Check Out
+:
+-
+❌ Skipping rejected container (Rejected
+Name
+:
+fghfhg
+Emp Id
+:
+912
+Check In
+:
+-
+Check Out
+:
+-)
+📦 Container 3 status: Rejected
+Name
+:
+Yuva
+Emp Id
+:
+803
+Check In
+:
+-
+Check Out
+:
+-
+❌ Skipping rejected container (Rejected
+Name
+:
+Yuva
+Emp Id
+:
+803
+Check In
+:
+-
+Check Out
+:
+-)
+🔁 Processing filter tab: Distant Check-In
+🔍 Clicking Filter icon...
+🎯 Selecting filter: Distant Check-In
+🔍 Looking for containers in current filter tab...
+⚠️ No data present — no containers found in this filter tab.
+🔁 Processing filter tab: No-CheckOut
+🔍 Clicking Filter icon...
+🎯 Selecting filter: No-CheckOut
+🔍 Looking for containers in current filter tab...
+📋 Found 3 container(s) in this filter tab
+📦 Container 1 status: Rejected
+Name
+:
+kalai
+Emp Id
+:
+808
+Check In
+:
+-
+Check Out
+:
+-
+❌ Skipping rejected container (Rejected
+Name
+:
+kalai
+Emp Id
+:
+808
+Check In
+:
+-
+Check Out
+:
+-)
+📦 Container 2 status: Rejected
+Name
+:
+fghfhg
+Emp Id
+:
+912
+Check In
+:
+-
+Check Out
+:
+-
+❌ Skipping rejected container (Rejected
+Name
+:
+fghfhg
+Emp Id
+:
+912
+Check In
+:
+-
+Check Out
+:
+-)
+📦 Container 3 status: Rejected
+Name
+:
+Yuva
+Emp Id
+:
+803
+Check In
+:
+-
+Check Out
+:
+-
+❌ Skipping rejected container (Rejected
+Name
+:
+Yuva
+Emp Id
+:
+803
+Check In
+:
+-
+Check Out
+:
+-)
+🔁 Processing filter tab: No Mark of Breaks
+🔍 Clicking Filter icon...
+🎯 Selecting filter: No Mark of Breaks
+🔍 Looking for containers in current filter tab...
+📋 Found 3 container(s) in this filter tab
+📦 Container 1 status: Rejected
+Name
+:
+kalai
+Emp Id
+:
+808
+Check In
+:
+-
+Check Out
+:
+-
+❌ Skipping rejected container (Rejected
+Name
+:
+kalai
+Emp Id
+:
+808
+Check In
+:
+-
+Check Out
+:
+-)
+📦 Container 2 status: Rejected
+Name
+:
+fghfhg
+Emp Id
+:
+912
+Check In
+:
+-
+Check Out
+:
+-
+❌ Skipping rejected container (Rejected
+Name
+:
+fghfhg
+Emp Id
+:
+912
+Check In
+:
+-
+Check Out
+:
+-)
+📦 Container 3 status: Rejected
+Name
+:
+Yuva
+Emp Id
+:
+803
+Check In
+:
+-
+Check Out
+:
+-
+❌ Skipping rejected container (Rejected
+Name
+:
+Yuva
+Emp Id
+:
+803
+Check In
+:
+-
+Check Out
+:
+-)
+✅ Approve Attendance Flow completed!

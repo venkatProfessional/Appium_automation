@@ -1,0 +1,2 @@
+& "C:\Users\JothiVenkatajalapath\Downloads\allure-2.34.1\allure-2.34.1\bin\allure.bat" serve allure-results
+pytest tests/test_workflow.py::test_projects_page_valid --maxfail=0 --alluredir=allure-results
